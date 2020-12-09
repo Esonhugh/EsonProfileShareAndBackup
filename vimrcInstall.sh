@@ -9,7 +9,10 @@ mv vimrc .vimrc
 
 echo 'open neovim(command:nvim) \
 	in COMMAND MODE use command \
+	\
 	:PlugInstall \
+	:call mkdp#util#install() \
+	\
 	and wait for the vim plug autoInstall\
 	the Plugins in the profile'
 
