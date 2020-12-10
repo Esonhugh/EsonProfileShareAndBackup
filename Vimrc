@@ -1,3 +1,38 @@
+" standard Profile of other commands
+
+syntax on
+syntax enable
+
+set hlsearch
+set number
+set autoindent
+set showmode
+set bg=dark
+set incsearch
+set helplang=cn
+set cursorcolumn
+set cursorline
+
+"
+"
+"1 no highlight searching result
+"set nohlsearch
+"2 no current column highlight
+"set nocursorcolumn
+"3 no current line highlight
+"set nocursorline
+"
+"
+"
+
+
+
+
+" ___________________________________________________________________________________________________________________________________
+
+" Plug profile
+
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
@@ -211,24 +246,4 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 
 
-
-
-
-
-
-
-" standard Profile of other commands
-
-syntax on
-syntax enable
-
-set hlsearch
-set number
-set autoindent
-set showmode
-set bg=dark
-set incsearch
-set helplang=cn
-
-
-
+" EOF 
