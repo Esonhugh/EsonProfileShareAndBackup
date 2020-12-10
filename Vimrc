@@ -5,13 +5,31 @@ syntax enable
 
 set hlsearch
 set number
-set autoindent
+set smartindent
 set showmode
 set bg=dark
 set incsearch
 set helplang=cn
 set cursorcolumn
 set cursorline
+
+set showmatch
+
+" 总是显示状态栏
+set laststatus=2
+" 显示光标当前位置
+set ruler
+
+" set listchars=tab:>-,trail:-
+
+" 设置编码
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+filetype plugin on
+filetype indent on
+
 
 "
 "
