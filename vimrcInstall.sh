@@ -6,14 +6,17 @@ brew install python3 || sudo apt install python3
 brew install exuberant-ctags || sudo apt install exuberant-ctags
 sudo pip3 install pynvim
 
+export CUR_installPath="`pwd`"
 
 # download vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
-cd ~
-wget http://esonhugh.github.io/back/vimrc
-mv vimrc .vimrc
+mv $CUR_installPath/vimrc ~/.vimrc
+
+unset CUR_installPath
+
+# rm -rf EsonProfileShareAndBackup
 
 echo 'open neovim(command:nvim) \
 	in COMMAND MODE use command \
