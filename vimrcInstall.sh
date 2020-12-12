@@ -5,6 +5,8 @@ brew install neovim  || sudo apt install neovim
 brew install python3 || sudo apt install python3
 brew install exuberant-ctags || sudo apt install exuberant-ctags
 sudo pip3 install pynvim
+sudo pip3 install jedi
+
 
 export CUR_installPath="`pwd`"
 
