@@ -1,8 +1,7 @@
 " standard Profile of other commands
-
+"
 syntax on
 syntax enable
-
 set hlsearch
 set number
 set smartindent
@@ -12,26 +11,18 @@ set incsearch
 set helplang=cn
 set cursorcolumn
 set cursorline
-
 set showmatch
-
 " 总是显示状态栏
 set laststatus=2
 " 显示光标当前位置
 set ruler
-
 " set listchars=tab:>-,trail:-
-
 " 设置编码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
 set encoding=utf-8
-
 filetype plugin on
 filetype indent on
-
-
-"
 "
 "1 no highlight searching result
 "set nohlsearch
@@ -40,17 +31,13 @@ filetype indent on
 "3 no current line highlight
 "set nocursorline
 "
-"
-"
+" ___________________________________
 
 
 
 
-" ___________________________________________________________________________________________________________________________________
 
 " Plug profile
-
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
@@ -61,15 +48,11 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 Plug 'itchyny/lightline.vim'
-
 " ctags
 Plug 'ludovicchabant/vim-gutentags'
-
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
-
 " rainbow_parentheses 
 Plug 'kien/rainbow_parentheses.vim'
 
@@ -88,22 +71,17 @@ set completeopt=noinsert,menuone,noselect
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-jedi'
-
 " NCM2 over!
-
-" This is the markdownPreview config
-
+" This is the markdownPreview .config
 " If you don't have nodejs and yarn
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " If you have nodejs and yarn
+
+" markdownPreview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-
 " MarkdownPreview config complete
-
-
-
 
 call plug#end()
 
@@ -226,6 +204,9 @@ let g:mkdp_filetypes = ['markdown']
 " markdownPreview over
 
 
+
+
+
 " CTAGS profile 
 " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
@@ -243,6 +224,8 @@ let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--python-kinds=+px']
+
+
 
 
 
@@ -275,17 +258,30 @@ au Syntax * RainbowParenthesesLoadBraces
 " rainbow_parentheses end 
 
 
+
+
+
 " auto pairs
 let g:AutoPairs = {
 			\'(':')',
 			\'[':']',
 			\'{':'}',
 			\"'":"'",
-			\'"':'"'
-			\"<":">"
+			\'"':'"',
+			\"<":">",
 			\
 			\}
 " AutoPairs profile end
+
+
+
+
+
+" alias
+cnoreabbrev Rainbow RainbowParenthesesToggle
+cnoreabbrev Markdown MarkdownPreview
+" alias over
+
 
 
 
