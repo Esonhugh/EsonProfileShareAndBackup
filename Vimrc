@@ -39,7 +39,7 @@ filetype indent on
 
 " Plug profile
 call plug#begin('~/.vim/plugged')
-
+"
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -55,11 +55,11 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
 " rainbow_parentheses 
 Plug 'kien/rainbow_parentheses.vim'
-
+"
 " Here is the Plug called the NCM2 auto completions
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-    " assuming you're using vim-plug: https://github.com/junegunn/vim-plug
+" assuming you're using vim-plug: https://github.com/junegunn/vim-plug
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 " enable ncm2 for all buffers
@@ -78,11 +78,10 @@ Plug 'ncm2/ncm2-jedi'
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " If you have nodejs and yarn
-
+"
 " markdownPreview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " MarkdownPreview config complete
-
 call plug#end()
 
 
@@ -224,7 +223,7 @@ let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 " let g:gutentags_ctags_extra_args += ['--python-kinds=+px']
-
+" ctags over
 
 
 
@@ -277,9 +276,13 @@ let g:AutoPairs = {
 
 
 
-" alias
+" alias commands
+" RainBow -> RainbowParenthesesToggle
 cnoreabbrev Rainbow RainbowParenthesesToggle
+" Markdown -> MarkdownPreview
 cnoreabbrev Markdown MarkdownPreview
+" Install -> PlugInstall
+cnoreabbrev Install PlugInstall
 " alias over
 
 
