@@ -381,5 +381,8 @@ cnoreabbrev Rainbow RainbowParenthesesToggle
 cnoreabbrev Markdown MarkdownPreview
 " Install -> PlugUpdate
 cnoreabbrev Install PlugUpdate
+" Plugs -> PlugStatusg
+cnoreabbrev Plugs PlugStatus
+"
 " alias over
 " EOF 
