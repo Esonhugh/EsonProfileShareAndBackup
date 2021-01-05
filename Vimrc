@@ -36,7 +36,7 @@ set ignorecase smartcase " 搜尋時忽略大小寫，但在有一個或以上�
 set linebreak "設定單詞不跨行
 set incsearch
 set showmatch
-set cmdheight=1 " 設定命令列的行數為 1
+set cmdheight=2 " 設定命令列的行數為 1
 set laststatus=2 " 顯示狀態列 (預設值為 1, 無法顯示狀態列)
 
 " set foldmethod=syntax " 設定語法摺疊
@@ -84,8 +84,6 @@ Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-" ctags
-Plug 'ludovicchabant/vim-gutentags'
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
 " auto pairs
@@ -153,13 +151,13 @@ Plug 'Shougo/echodoc.vim'
 "Python plugins
 Plug 'davidhalter/jedi-vim'
 " disable the jedi complete and replaced with the deoplete jedi
-"let g:jedi#completions_enabled = 1
+let g:jedi#completions_enabled = 1
 "    Jedi在插入模式下实时显示函数调用签名，
 "    突出显示当前参数。呼叫签名可以显示为缓冲区中的弹出窗口（默认情况下设置为1（具有隐藏功能），
 "    否则设置为2），其优点是易于引用（但这种方法有很多缺点，因为它会更改缓冲区的内容），
 "    或者在Vim的命令行中与函数调用对齐（设置为2），
 "    这可以提高Vim撤消历史记录的完整性。
-"let g:jedi#show_call_signatures = "2"
+let g:jedi#show_call_signatures = "2"
 " Jedi selects the first line of the completion menu: for a better typing-flow and usually saves one keypress.
 "let g:jedi#popup_select_first = 0
 "
@@ -381,8 +379,5 @@ cnoreabbrev Rainbow RainbowParenthesesToggle
 cnoreabbrev Markdown MarkdownPreview
 " Install -> PlugUpdate
 cnoreabbrev Install PlugUpdate
-" Plugs -> PlugStatusg
-cnoreabbrev Plugs PlugStatus
-"
 " alias over
 " EOF 
