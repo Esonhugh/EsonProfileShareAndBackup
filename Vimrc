@@ -157,7 +157,8 @@ let g:jedi#completions_enabled = 1
 "    突出显示当前参数。呼叫签名可以显示为缓冲区中的弹出窗口（默认情况下设置为1（具有隐藏功能），
 "    否则设置为2），其优点是易于引用（但这种方法有很多缺点，因为它会更改缓冲区的内容），
 "    或者在Vim的命令行中与函数调用对齐（设置为2），
-"    这可以提高Vim撤消历史记录的完整性。
+"    这可以提高Vim撤消历史记录的完整性
+"    there 0 1 2 is "0" "1" "2"
 let g:jedi#show_call_signatures = "2"
 " Jedi selects the first line of the completion menu: for a better typing-flow and usually saves one keypress.
 "let g:jedi#popup_select_first = 0
