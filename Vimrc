@@ -2,7 +2,8 @@
 
 " 设置在 Vim 中可以使用鼠标 防止在 Linux 终端下无法拷贝
 set mouse=a
-
+" set ESC to clear the highlght search in current
+nnoremap <esc> :noh<return><esc>
 set title " 修改终端标题
 syntax on
 syntax enable
