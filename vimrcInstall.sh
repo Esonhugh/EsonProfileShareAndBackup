@@ -7,10 +7,13 @@ brew install neovim  || sudo apt install neovim
 brew install python3 || sudo apt install python3
 brew install exuberant-ctags || sudo apt install exuberant-ctags
 brew install ruby || sudo apt install ruby
+apt install python3-pip||curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py&&python3 get-pip.py
+brew install gem||sudo apt install gem
 
 sudo pip3 install pynvim
 sudo pip3 install jedi
 sudo gem install json rest-client solargraph
+
 yard gems
 
 export CUR_installPath="`pwd`"
