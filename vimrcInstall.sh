@@ -1,12 +1,18 @@
 #!/bin/zsh
 
 # requirement
+#
+
 brew install neovim  || sudo apt install neovim
 brew install python3 || sudo apt install python3
 brew install exuberant-ctags || sudo apt install exuberant-ctags
+brew install ruby || sudo apt install ruby
+
 sudo pip3 install pynvim
 sudo pip3 install jedi
 
+sudo gem install solargraph
+yard gems
 
 export CUR_installPath="`pwd`"
 
@@ -19,7 +25,7 @@ mv $CUR_installPath/vimrc ~/.vimrc
 unset CUR_installPath
 
 # rm -rf EsonProfileShareAndBackup
-
+:<<EOF
 echo 'open neovim(command:nvim) \
 	in COMMAND MODE use command \
 	\
@@ -35,6 +41,7 @@ read;
 :call mkdp#util#install()
 :wq
 EOF
+nvim +PlugUpdate +UpdateRemotePlugins +qa
 
 echo y|rm Install.installer
 

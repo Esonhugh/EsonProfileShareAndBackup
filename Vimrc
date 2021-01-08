@@ -83,7 +83,6 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
@@ -240,6 +239,7 @@ set completeopt=noinsert,menuone,noselect
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
 " NCM2 over!
 " This is the markdownPreview .config
 " If you don't have nodejs and yarn
@@ -363,9 +363,37 @@ let g:mkdp_filetypes = ['markdown']
 " markdownPreview over
  
 
+"neovim LSP supports profile
+"
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+" Required for operations modifying multiple buffers like rename.
+"set hidden
+"
+"ruby language server protoocl needs the gem file named
+"solargraph 
+"i found
+"
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['solargraph', 'stdio'],  
+    \ }
 
-
-
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+nmap <F5> <Plug>(lcn-menu)
+"
+"Run command 
+"
+"nvim +PlugInstall +UpdateRemotePlugins +qa 
+"
+"in shell to install this plugin. 
+"
+"Install corresponding language servers. 
+"Restart neovim/vim and language services will be available right away. 
+"Happy hacking!
+"
+"
 
 call plug#end()
 
