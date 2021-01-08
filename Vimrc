@@ -5,6 +5,7 @@ set mouse=a
 " set ESC to clear the highlght search in current
 nnoremap <esc> :noh<return><esc>
 set title " 修改终端标题
+set relativenumber 
 syntax on
 syntax enable
 set hlsearch
@@ -147,6 +148,43 @@ Plug 'Shougo/echodoc.vim'
 
 
 "vim for some languages
+"neovim LSP supports profile
+"
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+" Required for operations modifying multiple buffers like rename.
+"set hidden
+"
+"ruby language server protoocl needs the gem file named
+"solargraph 
+"i found
+"
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['solargraph', 'stdio'],  
+    \ }
+"
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+let g:LanguageClient_autoStop = 0
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+"
+autocmd FileType ruby setlocal omnifunc=LanguageClient#complete
+"
+"Run command 
+"
+"nvim +PlugInstall +UpdateRemotePlugins +qa 
+"
+"in shell to install this plugin. 
+"
+"Install corresponding language servers. 
+"Restart neovim/vim and language services will be available right away. 
+"Happy hacking!
+"
+"
 "
 "Python plugins
 Plug 'davidhalter/jedi-vim'
@@ -363,37 +401,6 @@ let g:mkdp_filetypes = ['markdown']
 " markdownPreview over
  
 
-"neovim LSP supports profile
-"
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-" Required for operations modifying multiple buffers like rename.
-"set hidden
-"
-"ruby language server protoocl needs the gem file named
-"solargraph 
-"i found
-"
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['solargraph', 'stdio'],  
-    \ }
-
-" note that if you are using Plug mapping you should not use `noremap` mappings.
-nmap <F5> <Plug>(lcn-menu)
-"
-"Run command 
-"
-"nvim +PlugInstall +UpdateRemotePlugins +qa 
-"
-"in shell to install this plugin. 
-"
-"Install corresponding language servers. 
-"Restart neovim/vim and language services will be available right away. 
-"Happy hacking!
-"
-"
 
 call plug#end()
 

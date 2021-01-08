@@ -10,8 +10,7 @@ brew install ruby || sudo apt install ruby
 
 sudo pip3 install pynvim
 sudo pip3 install jedi
-
-sudo gem install solargraph
+sudo gem install json rest-client solargraph
 yard gems
 
 export CUR_installPath="`pwd`"
