@@ -21,7 +21,8 @@ sh ./vimrcInstall.sh
 4.Support plug are following
 
 PlugName|description
- fzf| fuzz finder
+---|---
+fzf| fuzz finder
  lightline.vim|highlight your statusline/tabline
  vim ruby|vim ruby support *
  markdown preview.nvim|markdown preview plug to see when you eidt
