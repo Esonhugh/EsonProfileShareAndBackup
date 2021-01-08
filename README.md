@@ -21,7 +21,6 @@ sh ./vimrcInstall.sh
 4.Support plug are following
 
 PlugName|description
-
  fzf| fuzz finder
  lightline.vim|highlight your statusline/tabline
  vim ruby|vim ruby support *
@@ -49,9 +48,13 @@ PlugName|description
  nvim yarp|
 
 5.for easy to use,i alias some common commands like
+
 Markdown -> MarkdownPreview
+
 Install -> PlugUpdate
+
 Rainbow -> RainbowParenthesesToggle
+
 ESC -> clear the highlight searchs
 
 # HAPPY TO USE !!
