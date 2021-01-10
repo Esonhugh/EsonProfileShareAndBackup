@@ -13,13 +13,16 @@ brew install gem||sudo apt install gem
 sudo pip3 install pynvim
 sudo pip3 install jedi
 sudo gem install json rest-client solargraph
-
+solargraph download-core
 yard gems
 
 export CUR_installPath="`pwd`"
 
+
 # download vim plug
+
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
 mv $CUR_installPath/vimrc ~/.vimrc
@@ -44,7 +47,6 @@ read;
 :wq
 EOF
 nvim +PlugUpdate +UpdateRemotePlugins +qa
-
-echo y|rm Install.installer
+nvim +checkhealth
 
 echo "if you do so,you will success install my profile now"
