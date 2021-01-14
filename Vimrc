@@ -1,5 +1,6 @@
 " standard Profile of other commands
 "
+packadd termdebug
 highlight Search ctermbg=yellow ctermfg=black 
 highlight IncSearch ctermbg=black ctermfg=yellow 
 highlight MatchParen cterm=underline ctermbg=NONE ctermfg=NONE
@@ -124,9 +125,6 @@ Plug 'kien/rainbow_parentheses.vim'
 " rainbow_parentheses profile
 autocmd VimEnter,WinNew * RainbowParenthesesToggle
 autocmd InsertEnter * RainbowParenthesesToggle
-autocmd InsertEnter * set noshowmatch
-autocmd InsertLeave * set showmatch
-
 " autoload
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -435,5 +433,8 @@ cnoreabbrev Rainbow RainbowParenthesesToggle
 cnoreabbrev Markdown MarkdownPreview
 " Install -> PlugUpdate
 cnoreabbrev Install PlugUpdate
+" Gdb -> termdebug
+cnoreabbrev Gdb Termdebug
 " alias over
+
 " EOF 
