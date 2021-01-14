@@ -117,6 +117,7 @@ let g:AutoPairs = {
 Plug 'kien/rainbow_parentheses.vim'
 " rainbow_parentheses profile
 autocmd VimEnter * RainbowParenthesesToggle
+autocmd InsertEnter * RainbowParenthesesToggle
 " autoload
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
