@@ -5,6 +5,8 @@ highlight IncSearch ctermbg=black ctermfg=yellow
 highlight MatchParen cterm=underline ctermbg=NONE ctermfg=NONE
 " 设置在 Vim 中可以使用鼠标 防止在 Linux 终端下无法拷贝
 set mouse=a
+" not use the vi compatible mode
+set nocompatible
 " set ESC to clear the highlght search in current
 nnoremap <esc> :noh<return><esc>
 set title " 修改终端标题
@@ -20,11 +22,15 @@ set incsearch
 set helplang=cn
 "开启highlight 光标
 autocmd InsertEnter * set ruler
+" auto highlight line and column
 autocmd InsertEnter * set nocursorcolumn
 autocmd InsertLeave * set cursorcolumn
 autocmd InsertLeave * set cursorline
 autocmd InsertEnter * set nocursorline
-" highlight format 3 plans
+" auto match 
+autocmd InsertEnter * set noshowmatch
+autocmd InsertLeave * set showmatch
+" highlight format 3 plans 
 " PLAN 1
 " highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 " highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
@@ -116,8 +122,11 @@ let g:AutoPairs = {
 " rainbow_parentheses 
 Plug 'kien/rainbow_parentheses.vim'
 " rainbow_parentheses profile
-autocmd VimEnter * RainbowParenthesesToggle
+autocmd VimEnter,WinNew * RainbowParenthesesToggle
 autocmd InsertEnter * RainbowParenthesesToggle
+autocmd InsertEnter * set noshowmatch
+autocmd InsertLeave * set showmatch
+
 " autoload
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
