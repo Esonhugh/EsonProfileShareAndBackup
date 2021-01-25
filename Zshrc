@@ -196,7 +196,7 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
-export ZSH="/home/kali/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 export ZSH_THEME="ys"
 
 fpath=(path/to/zsh-completions/src $fpath)
@@ -220,9 +220,6 @@ alias arp-scan="sudo arp-scan"
 alias vim="nvim"
 alias vi="nvim"
 
-alias burp=' export userCurrent=`pwd` && cd /home/kali/burp/ && /usr/lib/jvm/java-11-openjdk-amd64/bin/java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:BurpSuiteLoader_v2020.11.jar -noverify -jar burpsuite_pro_v2020.11.jar && cd $userCurrent'
-alias phpstorm='/home/kali/PHPstorm/bin/phpstorm.sh'
-alias rubymine="/home/kali/RubyMine/bin/rubymine.sh"
 
 backup_zshrc(){
         cp .zshrc zshrc_backup && echo "update profile complete"
