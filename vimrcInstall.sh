@@ -3,11 +3,10 @@
 # requirement
 #
 
-brew install neovim  || sudo apt install neovim
-brew install python3 || sudo apt install python3
-brew install exuberant-ctags || sudo apt install exuberant-ctags
-brew install ruby || sudo apt install ruby
-apt install python3-pip||curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py&&python3 get-pip.py
+nvim --version|brew install neovim  || sudo apt install neovim
+python3 --version|brew install python3 || sudo apt install python3
+ruby --version|brew install ruby || sudo apt install ruby
+pip || apt install python3-pip||curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py&&python3 get-pip.py
 brew install gem||sudo apt install gem
 
 sudo pip3 install pynvim
@@ -17,7 +16,6 @@ solargraph download-core
 yard gems
 
 export CUR_installPath="`pwd`"
-
 
 # download vim plug
 

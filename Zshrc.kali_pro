@@ -18,6 +18,8 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 export PROMPT_EOL_MARK=""
 
 # configure key keybindings
+# reconfig at the botton of this file with vim mode
+# i am a vim lover
 bindkey -e                                        # emacs key bindings
 bindkey ' ' magic-space                           # do history expansion on space
 bindkey '^[[3;5~' kill-word                       # ctrl + Supr
@@ -202,7 +204,8 @@ export ZSH_THEME="agnoster"
 
 fpath=(/usr/share/zsh-completions/src $fpath)
 
-
+# custom added 
+#
 alias py="echo python3 is default python version in py command which created by alias;echo;python3"
 alias python="echo python3 is default python version in python command which created by alias;echo;python3"
 alias py3="python3 "
@@ -223,10 +226,10 @@ alias wireshark="sudo wireshark"
 alias arp-scan="sudo arp-scan"
 alias vim="nvim"
 alias vi="nvim"
-alias burp=' export userCurrent=`pwd` && cd /home/kali/burp/ && /usr/lib/jvm/java-11-openjdk-amd64/bin/java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:BurpSuiteLoader_v2020.11.jar -noverify -jar burpsuite_pro_v2020.11.jar && cd $userCurrent'
-alias phpstorm='/home/kali/PHPstorm/bin/phpstorm.sh'
-alias rubymine="/home/kali/RubyMine/bin/rubymine.sh"
-alias webstorm="/home/kali/WebStorm/bin/webstorm.sh"
+# burp settings 
+# alias burp=' export userCurrent=`pwd` && cd /home/kali/burp/ && /usr/lib/jvm/java-11-openjdk-amd64/bin/java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:BurpSuiteLoader_v2020.11.jar -noverify -jar burpsuite_pro_v2020.11.jar && cd $userCurrent'
+# alias phpstorm='/home/kali/PHPstorm/bin/phpstorm.sh'
+# alias rubymine="/home/kali/RubyMine/bin/rubymine.sh"
 alias msf="msfconsole"
 alias msfp="msfvenom -l payload"
 
@@ -240,7 +243,7 @@ diskspace(){
 }
 
 
-export clash="192.168.31.25"
+export clash="192.168.0.1"
 export portOfClash=7890
 
 backup_zshrc(){
@@ -257,14 +260,15 @@ clash(){
 			echo "==============usage================="
 			echo "clash [command] [params]"
 			echo "=============command================"
-			echo "proxy proxy_ip	import ip temply"
+			echo "ip [proxy_ip]	import ip temply"
 			echo "on		open the cli proxy"
 			echo "off		close the proxy"
 			echo "*			show proxy & help"
 			echo "h			show help"
+			echo "help		show help aka h"
 			echo "===================================="
 			;;
-		proxy)
+		ip)
 			export clash="$2"
 			;;
                 on)
@@ -274,7 +278,8 @@ clash(){
                 off)
 			unset https_proxy http_proxy all_proxy && echo 'unset clash complete'
                         ;;
-
+		help)
+			clash h
                 *)
 			export|grep proxy
                         ;;
@@ -285,15 +290,14 @@ clash(){
 
 
 export PAGERS="most"
+export EDITOR="nvim"
+
 export burp_proxy="127.0.0.1:8080"
-export PATH="$PATH:/home/kali/.local/bin"
-
-export PATH="$PATH:/home/kali/Desktop/burp"
-export PATH="$PATH:/home/kali/PHPstorm/bin"
-export PATH="$PATH:/home/kali/RubymineProjects/bin"
-export PATH="$PATH:/home/kali/WebStorm/bin"
-
-export PATH="$PATH:/home/kali/.rvm/"
+#export PATH="$PATH:/home/kali/.local/bin"
+#export PATH="$PATH:/home/kali/Desktop/burp"
+#export PATH="$PATH:/home/kali/PHPstorm/bin"
+#export PATH="$PATH:/home/kali/RubymineProjects/bin"
+#export PATH="$PATH:/home/kali/.rvm/"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -303,23 +307,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [ -f ~/.rvm ] && source "$HOME/.rvm/scripts/rvm"
 
 
-PATH=$PATH:/home/kali/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 E0846154-18D4-494C-89BE-3896B6710E8C
+# PATH=$PATH:/home/kali/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT # and i del for secure
 
-# powerline shell 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
 
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
+
 bindkey -v #set up my zsh vim mode
