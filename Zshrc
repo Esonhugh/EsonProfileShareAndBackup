@@ -223,6 +223,7 @@ alias wireshark="sudo wireshark"
 alias arp-scan="sudo arp-scan"
 alias vim="nvim"
 alias vi="nvim"
+
 alias burp=' export userCurrent=`pwd` && cd /home/kali/burp/ && /usr/lib/jvm/java-11-openjdk-amd64/bin/java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:BurpSuiteLoader_v2020.11.jar -noverify -jar burpsuite_pro_v2020.11.jar && cd $userCurrent'
 alias phpstorm='/home/kali/PHPstorm/bin/phpstorm.sh'
 alias rubymine="/home/kali/RubyMine/bin/rubymine.sh"
@@ -303,6 +304,12 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [ -f ~/.rvm ] && source "$HOME/.rvm/scripts/rvm"
 
 
+# enable command-not-found if installed
+if [ -f /etc/zsh_command_not_found ]; then
+    . /etc/zsh_command_not_found
+fi
+COMMAND_NOT_FOUND_INSTALL_PROMPT=1
+
 PATH=$PATH:/home/kali/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 E0846154-18D4-494C-89BE-3896B6710E8C
 
 # powerline shell 
@@ -319,7 +326,10 @@ function install_powerline_precmd() {
   precmd_functions+=(powerline_precmd)
 }
 
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
+function powerlineON() {
+	if [ "$TERM" != "linux" ]; then
+    		install_powerline_precmd
+	fi
+}
+
 bindkey -v #set up my zsh vim mode
