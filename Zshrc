@@ -224,19 +224,19 @@ alias arp-scan="sudo arp-scan"
 alias vim="nvim"
 alias vi="nvim"
 
-alias burp=' export userCurrent=`pwd` && cd /home/kali/burp/ && /usr/lib/jvm/java-11-openjdk-amd64/bin/java --illegal-access=permit -Dfile.encoding=utf-8 -javaagent:BurpSuiteLoader_v2020.11.jar -noverify -jar burpsuite_pro_v2020.11.jar && cd $userCurrent'
 alias phpstorm='/home/kali/PHPstorm/bin/phpstorm.sh'
 alias rubymine="/home/kali/RubyMine/bin/rubymine.sh"
 alias webstorm="/home/kali/WebStorm/bin/webstorm.sh"
 alias msf="msfconsole"
 alias msfp="msfvenom -l payload"
 
-git-tool(){
+function git-tool() {
 	git add .
 	git commit -m "$1"
 	git push
 }
-diskspace(){
+
+function diskspace() {
 	df -h
 }
 
@@ -244,14 +244,15 @@ diskspace(){
 export clash="192.168.31.25"
 export portOfClash=7890
 
-backup_zshrc(){
+function backup_zshrc(){
         cp .zshrc zshrc_backup && echo "update profile complete"
 }
-recover_zshrc(){
+
+function recover_zshrc(){
         cp ~/zshrc_backup ~/.zshrc && echo "recover profile complete"
 }
 
-clash(){
+function clash(){
         case "$1" in
 		h)
 			echo "                                    "
@@ -283,8 +284,6 @@ clash(){
         esac
 }
 
-
-
 export PAGERS="most"
 export burp_proxy="127.0.0.1:8080"
 export PATH="$PATH:/home/kali/.local/bin"
@@ -308,9 +307,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
+
 COMMAND_NOT_FOUND_INSTALL_PROMPT=1
 
-PATH=$PATH:/home/kali/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 E0846154-18D4-494C-89BE-3896B6710E8C
 
 # powerline shell 
 function powerline_precmd() {
@@ -332,4 +331,9 @@ function powerlineON() {
 	fi
 }
 
-bindkey -v #set up my zsh vim mode
+function vimode() {
+	export EDITOR="vim"
+	bindkey -v #set up my zsh vim mode
+}
+
+vimode
